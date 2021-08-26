@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HomeService } from 'src/app/services/home.service';
+import { Verse } from 'src/interfaces/interfaces';
+import { VerseUp } from '../../../interfaces/interfaces';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +11,25 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  constructor(private router: Router) { }
+  public verseup: VerseUp;
+  public verse: Verse[];
+
+  constructor(private router: Router, private homeService: HomeService) { }
 
   ngOnInit() {
+
+    this.homeService.getVerse()
+    .subscribe(resp => {
+      this.verseup = resp;
+      this.verse = resp.verse;
+      console.log(this.verseup);
+      console.log(this.verse);
+    });
   }
 
-  pampe(){
+  pampe() {
     this.router.navigate(['/pampe']);
   }
+
 
 }

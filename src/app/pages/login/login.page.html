@@ -1,19 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    
-  </ion-toolbar>
+<ion-header translucent="{false}">
+  <ion-toolbar> </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h1>TASCD</h1>
+  <img src="../../../assets/icon/favicon.png" />
 
-  <form id="form">
-    <ion-input placeholder="Email"></ion-input>
-    <ion-input type="password" placeholder="Contraseña"></ion-input>
-    <ion-button expand="block" shape="round" (click) = "login()">Ingresar</ion-button>
+  <form id="form" (ngSubmit)="login( fLogin )" #fLogin="ngForm">
+    <ion-input
+      type="email"
+      [(ngModel)]="loginUser.email"
+      name="email"
+      placeholder="Email"
+      required
+    ></ion-input>
+    <ion-input
+      type="password"
+      [(ngModel)]="loginUser.password"
+      name="password"
+      placeholder="Contraseña"
+      required
+    ></ion-input>
+    <ion-button expand="block" shape="round" type="submit">Ingresar</ion-button>
   </form>
 
+  <p>
+      <ion-label>
+        <a routerLink="/register"> ¿No te has registrado?</a>
+      </ion-label>
+      <ion-item></ion-item>
+      <br>
+      <ion-label>
+        <a routerLink="/register">¿Olvidate tu contraseña?</a>
+      </ion-label>
+  </p>
 
-  <p><a routerLink="/register">¿No te has registrado?</a></p>
- 
+  <div class="finger">
+    <ion-button (click)="finger()"><ion-icon name="finger-print-outline"></ion-icon></ion-button>
+  </div>
 </ion-content>

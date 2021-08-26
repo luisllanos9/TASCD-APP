@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="false">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu" color="medium shade"></ion-menu-button>
@@ -6,6 +6,60 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="{true}">
+  <form onSubmit="{this.processForm}">
+    <div class="header-content">
+      <ion-avatar>
+        <img src="../assets/images/avatar.png" />
+      </ion-avatar>
+    </div>
 
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked"
+          >First Name <ion-text color="danger">*</ion-text></ion-label
+        >
+        <ion-input required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked"
+          >Last Name <ion-text color="danger">*</ion-text></ion-label
+        >
+        <ion-input required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked"
+          >Email <ion-text color="danger">*</ion-text></ion-label
+        >
+        <ion-input required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked"
+          >Password <ion-text color="danger">*</ion-text></ion-label
+        >
+        <ion-input required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Testimonio Personal</ion-label>
+        <ion-textarea
+          name="text"
+          rows="4"
+          placeholder="Escribe aquí tu testimonio personal..."
+          autocomplete="on"
+          autocorrect="on"
+          auto-grow="true"
+        ></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin"
+        >Actualizar</ion-button
+      >
+    </div>
+  </form>
 </ion-content>

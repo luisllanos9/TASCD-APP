@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="false">
   <ion-toolbar>
     <ion-buttons slot="end">
       <ion-button routerLink="/login">Log in</ion-button>
@@ -9,15 +9,13 @@
 <ion-content>
   <h1>Registrar</h1>
 
-  <form id="form">
-    <ion-input placeholder="Nombre"></ion-input>
-    <ion-input placeholder="Apellido"></ion-input>
-    <ion-input placeholder="Email"></ion-input>
-    <ion-input type="password" placeholder="Contraseña"></ion-input>
-    <ion-input type="password" placeholder="Confirmar Contraseña"></ion-input>
-    <ion-button expand="block" shape="round" (click)="register()">Registrar</ion-button>
+  <form id="form" (ngSubmit)="register(fRegister)" #fRegister="ngForm">
+    <ion-input type="text" [(ngModel)]="registerUser.nombre" name="nombre" placeholder="Nombre" required></ion-input>
+    <ion-input type="text" [(ngModel)]="registerUser.apellido" name="nombre" placeholder="Apellido" required></ion-input>
+    <ion-input type="email" [(ngModel)]="registerUser.email" name="email"placeholder="Email" required></ion-input>
+    <ion-input type="password" [(ngModel)]="registerUser.password" name="password" placeholder="Contraseña" required></ion-input>
+    <ion-button expand="block" shape="round" type="submit">Registrar</ion-button>
   </form>
-
 
    <p>Al presionar en registarse se aceptarán los <a>términos y condiciones</a> de la aplicación TASCD</p>
  

@@ -9,7 +9,9 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Toma nota de tus conversaciones con Dios</ion-card-subtitle>
+      <ion-card-subtitle
+        >Toma nota de tus conversaciones con Dios</ion-card-subtitle
+      >
       <ion-card-title>¿Señor que me quieres decir hoy?</ion-card-title>
     </ion-card-header>
 
@@ -28,19 +30,22 @@
       <b>E</b> - ¿Ejemplos que debo seguir o evitar?<br />
     </ion-card-content>
   </ion-card>
-
-  <form>
-    <ion-item>
-      <ion-label position="stacked">¿Qué te dijo Dios?</ion-label>
-      <ion-textarea autosize
-        rows="1"
-        placeholder="Escribe aquí lo que te dijo Dios"
-        autocomplete="on"
-        autocorrect="on"
-        >
-      </ion-textarea>
-    </ion-item>
-    <ion-button expand="full" shape="round" color="medium" (click)="qtdd()">Guardar</ion-button>
-  </form>
-  
 </ion-content>
+
+<ion-footer>
+  <form id="form" (ngSubmit)="qtdd( fQtdd )" #fQtdd ="ngForm">
+    <ion-toolbar>
+      <ion-item>
+        <ion-label position="stacked">¿Qué te dijo Dios?</ion-label>
+        <ion-textarea [(ngModel)]="pampe.text" name="text"
+          rows="4"
+          placeholder="Escribe aquí lo que te dijo Dios"
+          autocomplete="on"
+          autocorrect="on"
+          auto-grow="true"
+        ></ion-textarea>
+      </ion-item>
+      <ion-button expand="full" shape="round" color="medium" type="submit">Guardar</ion-button>
+    </ion-toolbar>
+  </form>
+</ion-footer>

@@ -9,65 +9,19 @@
   </ion-header>
 
   <ion-content> 
-    <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle>Lunes, 1 de Febrero de 2021</ion-card-subtitle>
-        <ion-card-title>Génesis 21: 1-7</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Visitó Jehová a Sara, como había dicho, e hizo Jehová con Sara como había hablado.<br>
 
-      2 Y Sara concibió y dio a Abraham un hijo en su vejez, en el tiempo que Dios le había dicho...
+    <ion-card *ngFor="let p of pampe" (click)="goToView(p)">
+      <ion-card-header>
+        <ion-card-subtitle>{{p.created}}</ion-card-subtitle>
+       <!-- <ion-card-title ><p  [innerHtml]="p.verse.verse"></p></ion-card-title>-->
+      </ion-card-header>
+      <ion-card-content class="ion-text-wrap"><p  [innerHtml]="p.verse.verse"></p>
       </ion-card-content>
       <ion-card-content class="ion-text-wrap">
-        Dios me quiere decir en Él puedo descansar mis cargas en todo momento, debo liberarme y dejar que Él obre en cada momento de mi vida
+        {{p.qtdd}}
       </ion-card-content>
     </ion-card>
 
-    <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle>Martes, 2 de Febrero de 2021</ion-card-subtitle>
-        <ion-card-title>Génesis 21: 8-14</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Visitó Jehová a Sara, como había dicho, e hizo Jehová con Sara como había hablado.<br>
-
-      2 Y Sara concibió y dio a Abraham un hijo en su vejez, en el tiempo que Dios le había dicho...
-      </ion-card-content>
-      <ion-card-content class="ion-text-wrap">
-        Dios me quiere decir en Él puedo descansar mis cargas en todo momento, debo liberarme y dejar que Él obre en cada momento de mi vida
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle>Miercoles, 3 de Febrero de 2021</ion-card-subtitle>
-        <ion-card-title>Génesis 21: 16-20</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Visitó Jehová a Sara, como había dicho, e hizo Jehová con Sara como había hablado.<br>
-
-      2 Y Sara concibió y dio a Abraham un hijo en su vejez, en el tiempo que Dios le había dicho...
-      </ion-card-content>
-      <ion-card-content class="ion-text-wrap">
-        Dios me quiere decir en Él puedo descansar mis cargas en todo momento, debo liberarme y dejar que Él obre en cada momento de mi vida
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle>Jueves, 4 de Febrero de 2021</ion-card-subtitle>
-        <ion-card-title>Génesis 21: 21-27</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Visitó Jehová a Sara, como había dicho, e hizo Jehová con Sara como había hablado.<br>
-
-      2 Y Sara concibió y dio a Abraham un hijo en su vejez, en el tiempo que Dios le había dicho...
-      </ion-card-content>
-      <ion-card-content class="ion-text-wrap">
-        Dios me quiere decir en Él puedo descansar mis cargas en todo momento, debo liberarme y dejar que Él obre en cada momento de mi vida
-      </ion-card-content>
-    </ion-card>
   </ion-content>
 </div>
 

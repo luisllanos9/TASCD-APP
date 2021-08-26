@@ -1,0 +1,16 @@
+ion-content {
+  ion-card-title {
+      font-size: 20px;
+  }
+
+  ion-card-content {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  ion-card-content{
+    padding-bottom: 20px;
+  }
+}

@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { UserGuardGuard } from './guards/user-guard.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
+    //canActivate: [ UserGuardGuard ]
+    canLoad: [ UserGuardGuard ]
   },
   {
     path: '',
@@ -38,6 +41,10 @@ const routes: Routes = [
   {
     path: 'stadistics',
     loadChildren: () => import('./pages/stadistics/stadistics.module').then( m => m.StadisticsPageModule)
+  },
+  {
+    path: 'qtdd-viwer',
+    loadChildren: () => import('./pages/qtdd-viwer/qtdd-viwer.module').then( m => m.QtddViwerPageModule)
   },
 ];
 

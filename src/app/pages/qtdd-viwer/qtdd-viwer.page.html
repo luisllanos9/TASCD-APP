@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/qtdd" color="medium shade" text="Regresar"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-text>
+      <h1>TASCD</h1>
+    </ion-text>
+    <ion-text>
+      <h3><b>{{pampe?.created || null}}</b></h3>
+      <!--<h3><b>{{pampe?.verse.verse || null}}</b></h3>-->
+      <p [innerHtml]="pampe?.verse.verse"></p>
+      <br>
+      <h3><b>¿Qué me dijo Dios?</b></h3>
+      <p>{{pampe?.qtdd}}</p>
+    </ion-text>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="send()">
+        <ion-icon name="share"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+  
+</ion-content>

@@ -7,34 +7,18 @@
 </ion-header>
 
 <ion-content>
-  <ion-text>
-    <h1>TASCD</h1>
-  </ion-text>
-  <ion-text>
-    <h3><b>Martes, 2 de Febrero:</b></h3>
-    <h3><b>Génesis 21: 1-7 (RV’60)</b></h3>
-    <p>
-      Visitó Jehová a Sara, como había dicho, e hizo Jehová con Sara como había
-      hablado.<br />
-
-      2 Y Sara concibió y dio a Abraham un hijo en su vejez, en el tiempo que
-      Dios le había dicho.<br />
-
-      3 Y llamó Abraham el nombre de su hijo que le nació, que le dio a luz
-      Sara, Isaac.<br />
-
-      4 Y circuncidó Abraham a su hijo Isaac de ocho días, como Dios le había
-      mandado.<br />
-
-      5 Y era Abraham de cien años cuando nació Isaac su hijo.<br />
-
-      6 Entonces dijo Sara: Dios me ha hecho reír, y cualquiera que lo oyere, se
-      reirá conmigo.<br />
-
-      7 Y añadió: ¿Quién dijera a Abraham que Sara habría de dar de mamar a
-      hijos? Pues le he dado un hijo en su vejez.<br />
-    </p>
-  </ion-text>
+  <div *ngFor="let v of verse">
+    <ion-text>
+      <h1>TASCD</h1>
+    </ion-text>
+    <ion-text>
+      <!--<h3><b>{{v.date}}</b></h3>
+      <h3 style = "white-space: pre-wrap;" >{{v.verse}}</h3>-->
+      <p  [innerHtml]="v.verse"></p>
+      <br>
+    </ion-text>
+  </div>
+  
 
   <ion-button expand="block"  color="medium shade" (click)="pampe()">¿Qué te dijo Dios?</ion-button>
 </ion-content>
